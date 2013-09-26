@@ -3,9 +3,9 @@
 Ingredients = new Meteor.Collection('ingredients');
 
 Ingredients.allow({
+	insert: isAdmin,
 	update: isAdmin,
-	delete: isAdmin,
-	create: isAdmin,
+	remove: isAdmin,
 });
 
 Meteor.methods({

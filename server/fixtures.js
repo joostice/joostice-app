@@ -4,10 +4,10 @@ if (Ingredients.find().count() === 0 ){
 	// create data
 	Ingredients.insert({
 		title: 'Gala Apple',
-		aka: []
+		aka: [],
 		color: '#B24B22',
 		flavorIntesity: '1',
-		sweetness: '3',
+		sweetness: '4',
 		saltiness: '0',
 		bitterness: '0',
 		sourness: '1',
@@ -19,9 +19,26 @@ if (Ingredients.find().count() === 0 ){
 		researchPapers: [],
 	})
 
+Ingredients.insert({
+		title: 'Granny Smith Apple',
+		aka: [],
+		color: '#A9CF07',
+		flavorIntesity: '2',
+		sweetness: '3',
+		saltiness: '0',
+		bitterness: '0',
+		sourness: '2',
+		spiciness: '0',
+		url: 'https://en.wikipedia.org/wiki/Granny_Smith',
+		votes: 0,
+		upvoters: [],
+		benefits: ['boast the highest concentration of phenols amongst the apple breeds'],
+		researchPapers: [],
+	})
+
 	Ingredients.insert({
 		title: 'Navel Orange',
-		aka: []
+		aka: [],
 		color: '#FF9B31',
 		flavorIntesity: '2',
 		sweetness: '3',
@@ -38,7 +55,7 @@ if (Ingredients.find().count() === 0 ){
 
 	Ingredients.insert({
 		title: 'Cavalo Nero',
-		aka: ['Kale', 'Tuscan Cabbage']
+		aka: ['Kale', 'Tuscan Cabbage'],
 		color: '#405A5B',
 		flavorIntesity: '4',
 		sweetness: '0',
@@ -55,12 +72,12 @@ if (Ingredients.find().count() === 0 ){
 
 	Ingredients.insert({
 		title: 'Chili',
-		aka: ['Cayenne pepper']
+		aka: ['Cayenne pepper'],
 		color: '#D00C17',
 		flavorIntesity: '5',
 		sweetness: '0',
 		saltiness: '2',
-		bitterness: '0'
+		bitterness: '0',
 		sourness: '0',
 		spiciness: '5',
 		url: 'https://en.wikipedia.org/wiki/Chili_pepper',
@@ -72,7 +89,7 @@ if (Ingredients.find().count() === 0 ){
 
 	Ingredients.insert({
 		title: 'Ginger',
-		aka: []
+		aka: [],
 		color: '#FBD093',
 		flavorIntesity: '5',
 		sweetness: '0',
@@ -89,7 +106,7 @@ if (Ingredients.find().count() === 0 ){
 
 	Ingredients.insert({
 		title: 'Watermelon',
-		aka: []
+		aka: [],
 		color: '#ED4639',
 		flavorIntesity: '1',
 		sweetness: '4',
@@ -100,7 +117,7 @@ if (Ingredients.find().count() === 0 ){
 		url: 'https://en.wikipedia.org/wiki/Watermelon',
 		votes: 0,
 		upvoters: [],
-		benefits: ['traditional remedy for common cold', 'aids digestion', 'Ayurvedic aphrodisiac', 'improves absorption of essential nutrients'],
+		benefits: ['cardiovascular health'],
 		researchPapers: [],
 	})
 
