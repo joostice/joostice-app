@@ -1,2 +1,19 @@
 <template name="header">
+	<header class="navbar">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="nav-collapse collapse">
+        			<ul class="nav">
+						<li class="{{activeRouteClass 'ingredientSubmit'}}">
+						<a href="{{ingredientSubmitPath}}">Submit Ingredient</a>
+						</li>
+					</ul>
+				</div>
+
+				<ul class="nav pull-right">
+          			<li>{{loginButtons}}</li>
+        		</ul>
+   			</div>
+   		</div>
+    </header>
 </template>

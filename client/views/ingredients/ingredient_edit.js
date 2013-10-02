@@ -1,10 +1,10 @@
-Template.postEdit.helpers({
+Template.ingredientEdit.helpers({
 	post: function(){
-		return Posts.findOne(Session.get('currentPostId'));
+		return Ingredients.findOne(Session.get('currentPostId'));
 	}
 });
 
-Template.postEdit.events({
+Template.ingredientEdit.events({
 	'submit form': function(e){
 		e.preventDefault();
 
@@ -15,7 +15,7 @@ Template.postEdit.events({
 			title: $(e.target).find('[name= title]').val()
 		}
 
-		Posts.update(currentPostId, {$set: postProperties}, function(error){
+		Ingredients.update(currentPostId, {$set: postProperties}, function(error){
 			if(error){
 				//display error to user
 				alert(error.reason);
@@ -32,7 +32,7 @@ Template.postEdit.events({
 
 			if (confirm("Delete this post?")){
 				var currentPostId = Session.get('currentPostId');
-				Posts.remove(currentPostId);
+				Ingredients.remove(currentPostId);
 				Meteor.Router.to('postsList');
 			}
 		}
