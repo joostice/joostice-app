@@ -1,5 +1,7 @@
-$(function() {
 
+    $(function() {
+
+                // Code for those demos
                 var _createColorpickers = function() {
                     $('#cp1').colorpicker({
                         format: 'hex'
