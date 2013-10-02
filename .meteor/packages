@@ -10,3 +10,5 @@ bootstrap
 router
 accounts-password
 accounts-ui-bootstrap-dropdown
+bootstrap-colorpicker
+bootstrap-slider-touch

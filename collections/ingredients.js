@@ -40,7 +40,7 @@ Meteor.methods({
     
     // pick out the whitelisted keys
     var ingredient = _.extend(_.pick(ingredientAttributes,
-     'title', 'aka', 'flavorIntesity', 'sweetness', 'saltiness', 'bitterness', 'sourness', 'spiciness', 'url', 'benefits'), {
+     'title', 'aka', 'flavorIntesity', 'color', 'sweetness', 'saltiness', 'bitterness', 'sourness', 'spiciness', 'url', 'benefits'), {
       userId: user._id, 
       author: user.username, 
       submitted: new Date().getTime(),
