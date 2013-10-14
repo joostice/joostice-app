@@ -127,16 +127,15 @@ Template.ingredientSubmit.events({
 		var ingredient = {
 			title: $(e.target).find("[name=title]").val(),
 			aka: $(e.target).find("[name=aka]").val(),
-			flavorIntensity: $(e.target).find("[name=flavorIntensity]").val(),
+			flavorIntensity: parseInt($(e.target).find("[name=flavorIntensity]").val()),
 			color: $(e.target).find("[name=color]").val(),
-			sweetness: $(e.target).find("[name=sweetness]").val(),
-			saltiness: $(e.target).find("[name=saltiness]").val(),
-			bitterness: $(e.target).find("[name=bitterness]").val(),
-			sourness: $(e.target).find("[name=sourness]").val(),
-			spiciness: $(e.target).find("[name=spiciness]").val(),
+			sweetness: parseInt($(e.target).find("[name=sweetness]").val()),
+			saltiness: parseInt($(e.target).find("[name=saltiness]").val()),
+			bitterness: parseInt($(e.target).find("[name=bitterness]").val()),
+			sourness: parseInt($(e.target).find("[name=sourness]").val()),
+			spiciness: parseInt($(e.target).find("[name=spiciness]").val()),
 			url: $(e.target).find("[name=url]").val(),
 			benefits: $(e.target).find("[name=benefits]").val(),
-			awesomeness: $(e.target).find("[name=awesomeness]").val(),
 		}
 
 	Meteor.call('ingredientInsert', ingredient, function(error, id) {

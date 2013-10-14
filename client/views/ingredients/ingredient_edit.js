@@ -1,6 +1,8 @@
+/*
+
 Template.ingredientEdit.helpers({
 	post: function(){
-		return Ingredients.findOne(Session.get('currentPostId'));
+		return Ingredients.findOne(Session.get('currentIngredientId'));
 	}
 });
 
@@ -8,20 +10,20 @@ Template.ingredientEdit.events({
 	'submit form': function(e){
 		e.preventDefault();
 
-		var currentPostId = Session.get('currentPostId');
+		var currentIngredientId = Session.get('currentIngredientId');
 
 		var postProperties = {
 			url: $(e.target).find('[name= url]').val(),
 			title: $(e.target).find('[name= title]').val()
 		}
 
-		Ingredients.update(currentPostId, {$set: postProperties}, function(error){
+		Ingredients.update(currentIngredientId, {$set: postProperties}, function(error){
 			if(error){
 				//display error to user
 				alert(error.reason);
 			}
 			else{
-				Meteor.Router.to('postPage', currentPostId);
+				Meteor.Router.to('postPage', currentIngredientId);
 			}
 
 		});
@@ -31,9 +33,12 @@ Template.ingredientEdit.events({
 			e.preventDefault();
 
 			if (confirm("Delete this post?")){
-				var currentPostId = Session.get('currentPostId');
-				Ingredients.remove(currentPostId);
+				var currentIngredientId = Session.get('currentIngredientId');
+				Ingredients.remove(currentIngredientId);
 				Meteor.Router.to('postsList');
 			}
 		}
 });
+
+
+*/

@@ -3,7 +3,15 @@ Meteor.Router.add({
   '/submit': 'ingredientSubmit',
   '/sweet': 'ingredientsSweet',
   '/flavour':'ingredientsFlavour',
+  '/bitter':'ingredientsBitter',
+  '/spice': 'ingredientsSpice',
+  '/sour' : 'ingredientsSour',
+  '/salt' : 'ingredientsSalty',
   '/all': 'ingredientsAll',
+  '/ingredients/:_id': {
+    to: 'ingredientPage', 
+    and: function(id) { Session.set('currentIngredientId', id); }
+  },
 });
 
 Meteor.Router.filters({

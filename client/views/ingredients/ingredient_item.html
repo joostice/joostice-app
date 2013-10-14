@@ -1,7 +1,8 @@
 <template name="ingredientItem">
 <div class="post" style="background:{{color}}">
 	<div class="post-content" style="background: #fff">
-	<b>{{title}}</b> Intensity: {{flavorIntensity}} Sweet: {{sweetness}} Salt: {{saltiness}} Bitter: {{bitterness}} Spice: {{spiciness}} Benefits: {{benefits}} {{color}}
+	<b>{{title}}</b> Intensity: {{flavorIntensity}} Sweet: {{sweetness}} Salt: {{saltiness}} Bitter: {{bitterness}} Spice: {{spiciness}} Benefits: {{benefits}}
 	</div>
+	<a href="{{ingredientPagePath this}}" class="discuss btn">Discuss</a>
 </div>
 </template>

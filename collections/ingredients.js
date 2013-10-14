@@ -39,13 +39,15 @@ Meteor.methods({
 
     
     // pick out the whitelisted keys
+    // need to make sure to save certain attributes as integers
     var ingredient = _.extend(_.pick(ingredientAttributes,
      'title', 'aka', 'flavorIntensity', 'color', 'sweetness', 'saltiness', 'bitterness', 'sourness', 'spiciness', 'url', 'benefits'), {
       userId: user._id, 
       author: user.username, 
       submitted: new Date().getTime(),
       upvoters: [],
-      votes:0
+      votes:0,
+      commentsCount:0,
     });
     
     var ingredientId = Ingredients.insert(ingredient);

@@ -10,9 +10,27 @@
 	{{>ingredientList options}}
 </template>
 
+<template name="ingredientsSalty">
+	{{>ingredientList options}}
+</template>
+
+<template name="ingredientsSour">
+	{{>ingredientList options}}
+</template>
+
+<template name="ingredientsBitter">
+	{{>ingredientList options}}
+</template>
+
+<template name="ingredientsSpice">
+	{{>ingredientList options}}
+</template>
 
 <template name="ingredientList">
 {{#each ingredientsWithRank}}
 {{> ingredientItem}}
 {{/each}}
+
+
+
 </template>

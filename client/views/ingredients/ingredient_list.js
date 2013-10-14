@@ -16,6 +16,15 @@ Template.ingredientsFlavour.helpers({
   }
 });
 
+Template.ingredientsBitter.helpers({
+  options: function() {
+    return {
+      sort: {bitterness: -1},
+      handle: ingredientsBitterHandle,
+    }
+  }
+});
+
 Template.ingredientsAll.helpers({
   options: function() {
     return {
@@ -25,7 +34,32 @@ Template.ingredientsAll.helpers({
   }
 });
 
+Template.ingredientsSalty.helpers({
+  options: function() {
+    return {
+      sort: {saltiness: -1},
+      handle: ingredientsSaltyHandle,
+    }
+  }
+});
 
+Template.ingredientsSour.helpers({
+  options: function() {
+    return {
+      sort: {sourness: -1},
+      handle: ingredientsSourHandle,
+    }
+  }
+});
+
+Template.ingredientsSpice.helpers({
+  options: function() {
+    return {
+      sort: {spiciness: -1},
+      handle: ingredientsSpiceHandle,
+    }
+  }
+});
 
 Template.ingredientList.helpers({
 	ingredients: function(){
