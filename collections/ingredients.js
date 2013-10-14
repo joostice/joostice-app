@@ -16,8 +16,8 @@ Meteor.methods({
       ingredientWithSameLink = Ingredients.findOne({url: ingredientAttributes.url});
     
     // ensure the user is logged in
-   /* if (!user)
-      throw new Meteor.Error(401, "You need to login to post new ingredients"); */
+    if (!user)
+      throw new Meteor.Error(401, "You need to login to post new ingredients");
     
     // ensure the ingredient has a title
     if (!ingredientAttributes.title)
@@ -40,7 +40,7 @@ Meteor.methods({
     
     // pick out the whitelisted keys
     var ingredient = _.extend(_.pick(ingredientAttributes,
-     'title', 'aka', 'flavorIntesity', 'color', 'sweetness', 'saltiness', 'bitterness', 'sourness', 'spiciness', 'url', 'benefits'), {
+     'title', 'aka', 'flavorIntensity', 'color', 'sweetness', 'saltiness', 'bitterness', 'sourness', 'spiciness', 'url', 'benefits'), {
       userId: user._id, 
       author: user.username, 
       submitted: new Date().getTime(),

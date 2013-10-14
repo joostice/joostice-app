@@ -1,6 +1,9 @@
 Meteor.Router.add({
-	'/': 'ingredientList',
+	'/': {to: 'ingredientsAll', as: 'home'},
   '/submit': 'ingredientSubmit',
+  '/sweet': 'ingredientsSweet',
+  '/flavour':'ingredientsFlavour',
+  '/all': 'ingredientsAll',
 });
 
 Meteor.Router.filters({

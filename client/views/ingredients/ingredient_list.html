@@ -1,5 +1,18 @@
+<template name="ingredientsSweet">
+	{{>ingredientList options}}
+</template>
+
+<template name="ingredientsAll">
+	{{>ingredientList options}}
+</template>
+
+<template name="ingredientsFlavour">
+	{{>ingredientList options}}
+</template>
+
+
 <template name="ingredientList">
-{{#each ingredients}}
+{{#each ingredientsWithRank}}
 {{> ingredientItem}}
 {{/each}}
 </template>
