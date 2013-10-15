@@ -8,6 +8,7 @@ Meteor.Router.add({
   '/sour' : 'ingredientsSour',
   '/salt' : 'ingredientsSalty',
   '/all': 'ingredientsAll',
+  '/popular': 'ingredientsPopular',
   '/ingredients/:_id': {
     to: 'ingredientPage', 
     and: function(id) { Session.set('currentIngredientId', id); }

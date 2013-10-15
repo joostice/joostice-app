@@ -61,6 +61,15 @@ Template.ingredientsSpice.helpers({
   }
 });
 
+Template.ingredientsPopular.helpers({
+  options: function() {
+    return {
+      sort: {votes: -1},
+      handle: ingredientsPopularHandle,
+    }
+  }
+});
+
 Template.ingredientList.helpers({
 	ingredients: function(){
 		return Ingredients.find({}, {sort: this.sort, limit: this.handle.limit()});

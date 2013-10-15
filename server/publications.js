@@ -28,6 +28,10 @@ Meteor.publish('ingredientsSpice', function(limit){
 	return Ingredients.find({}, {sort: {spiciness: -1}, limit: limit});
 });
 
+Meteor.publish('ingredientsPopular', function(limit){
+	return Ingredients.find({}, {sort: {votes: -1}, limit: limit});
+});
+
 Meteor.publish('singleIngredient', function(id) {
   return id && Ingredients.find(id);
 });

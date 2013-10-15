@@ -26,6 +26,10 @@
 	{{>ingredientList options}}
 </template>
 
+<template name="ingredientsPopular">
+	{{>ingredientList options}}
+</template>
+
 <template name="ingredientList">
 {{#each ingredientsWithRank}}
 {{> ingredientItem}}

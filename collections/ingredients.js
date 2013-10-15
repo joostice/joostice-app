@@ -54,6 +54,40 @@ Meteor.methods({
     
     return ingredientId;
   },
+
+  upvote: function(ingredientId) {
+    var user = Meteor.user();
+    // ensure the user is logged in
+    if (!user)
+      throw new Meteor.Error(401, "You need to login to upvote");
+    
+    Ingredients.update({
+      _id: ingredientId, 
+      upvoters: {$ne: user._id}
+    }, {
+      $addToSet: {upvoters: user._id},
+      $inc: {votes: 1}
+    });
+  },
+
+  random: function(ingredientNumber) {
+    var ing = Ingredients.find().fetch();
+    var items = [];
+    for (i=0; i < Ingredients.find().count(); i++) {
+        items.push(ing[i].title);
+    }
+    var juice = [];
+    for (i=0; i < Math.floor((Math.random()*ingredientNumber)+1); i++){
+    k = Math.floor(Math.random()*items.length)
+    a = items[k];
+    juice.push(a);
+    items.splice(k, 1);
+
+    }
+  console.log(juice);
+  return juice;
+  }
+
 });
 
 

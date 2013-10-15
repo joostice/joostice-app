@@ -1,11 +1,16 @@
+Deps.autorun(function(){
+	Meteor.subscribe('comments', Session.get('currentIngredeintId'));
+	Meteor.subscribe('singleIngredient', Session.get('currentIngredientId'));
+});
 
-Meteor.subscribe('comments', Session.get('currentIngredeintId'));
-Meteor.subscribe('singleIngredient', Session.get('currentIngredientId'));
+var p = 30;
 
-ingredientsAllHandle = Meteor.subscribeWithPagination('ingredientsAll', 30);
-ingredientsSweetHandle = Meteor.subscribeWithPagination('ingredientsSweet', 30);
-ingredientsFlavourHandle = Meteor.subscribeWithPagination('ingredientsFlavour', 30);
-ingredientsBitterHandle = Meteor.subscribeWithPagination('ingredientsBitter', 30);
-ingredientsSpiceHandle = Meteor.subscribeWithPagination('ingredientsSpice', 30);
-ingredientsSourHandle = Meteor.subscribeWithPagination('ingredientsSour', 30);
-ingredientsSaltyHandle = Meteor.subscribeWithPagination('ingredientsSalty', 30);
+ingredientsAllHandle = Meteor.subscribeWithPagination('ingredientsAll', p);
+ingredientsSweetHandle = Meteor.subscribeWithPagination('ingredientsSweet', p);
+ingredientsFlavourHandle = Meteor.subscribeWithPagination('ingredientsFlavour', p);
+ingredientsBitterHandle = Meteor.subscribeWithPagination('ingredientsBitter', p);
+ingredientsSpiceHandle = Meteor.subscribeWithPagination('ingredientsSpice', p);
+ingredientsSourHandle = Meteor.subscribeWithPagination('ingredientsSour', p);
+ingredientsSaltyHandle = Meteor.subscribeWithPagination('ingredientsSalty', p);
+ingredientsPopularHandle = Meteor.subscribeWithPagination('ingredientsPopular', p);
+
