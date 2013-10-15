@@ -4,11 +4,12 @@ Meteor.methods({
 	comment: function(commentAttributes){
 		var user = Meteor.user();
 		var ingredient = Ingredients.findOne(commentAttributes.ingredientId);
+
 		//ensure user is logged in
 		if (!user)
 			throw new Meteor.Error(401, "You need to login to make comments");
 
-		if(!commentAttributes.body)
+		if(commentAttributes.body.length < 2)
 			throw new Meteor.Error(422, "Please write some content");
 
 		if(!commentAttributes.ingredientId)
@@ -16,7 +17,7 @@ Meteor.methods({
 
 		comment = _.extend(_.pick(commentAttributes,'ingredientId', 'body'),{
 			userId: user._id,
-			author: user._id,
+			author: user.emails[0].address.split('@')[0],
 			submitted: new Date().getTime()
 		});
 
